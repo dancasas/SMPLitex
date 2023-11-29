@@ -11,6 +11,9 @@
 ## SMPLitex dataset
 [Dataset](./textures)
 
+## Results on DeepFashion-MultiModal
+[Results](./results/DeepFashion)
+
 ## Install instructions
 Coming soon...
 
