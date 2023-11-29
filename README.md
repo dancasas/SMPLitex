@@ -13,3 +13,14 @@
 
 ## Install instructions
 Coming soon...
+
+## Citation
+
+```
+@inproceedings{casas2023smplitex,
+    title = {{SMPLitex: A Generative Model and Dataset for 3D Human Texture Estimation from Single Image}},
+    author = {Casas, Dan and Comino-Trinidad, Marc},
+    booktitle = {British Machine Vision Conference (BMVC)},
+    year = {2023}
+}
+```
