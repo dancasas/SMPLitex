@@ -1,6 +1,6 @@
 # SMPLitex: A Generative Model and Dataset for 3D Human Texture Estimation from Single Image
 
-![Teaser](img/casas_BMVC23.png "Teaser image"){width=500px}
+<img src="img/casas_BMVC23.png" alt="Teaser image" width="80%"/>
 
 [[Project website](https://dancasas.github.io/projects/SMPLitex/index.html)]
 
