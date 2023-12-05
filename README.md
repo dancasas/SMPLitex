@@ -15,7 +15,75 @@
 [Results](./results/DeepFashion)
 
 ## Install instructions
-Coming soon...
+Please use a UNIX environment. Make sure you have a high-end NVidia GPU. We recommend a RTX 4090. 
+
+```bash
+pip install -r requirements.txt
+```
+
+### Download our model
+
+### Train your own model
+
+We fine-tuned a SD v1.4 model. Please be aware that newer or older versions are untested and the pipeline may not work. Create the environment variable as:
+ 
+	export MODEL_NAME="CompVis/stable-diffusion-v1-4"
+	
+Place your own UV maps in a folder. We used 512x512 pixels .jpg files for our training. We include our training data in "data_train". Create the environment variable pointing to your training data folder, as:
+
+	export INSTANCE_DIR="./data_train"
+	
+Create an temporary folder onto which to save initial images:
+
+	export CLASS_DIR="class_dir"
+
+	
+Set your output model path as:
+
+	 export OUTPUT_DIR="./simplitex-trained-model" 
+	
+Change your working directory to the scripts folder:
+
+	cd scripts
+	
+And train your model as:
+
+	accelerate launch --mixed_precision="fp16" train_dreambooth.py   --pretrained_model_name_or_path=$MODEL_NAME    --instance_data_dir=$INSTANCE_DIR   --output_dir=$OUTPUT_DIR   --class_data_dir=$CLASS_DIR   --with_prior_preservation --prior_loss_weight=1.0   --instance_prompt="a sks texturemap"   --class_prompt="a texturemap"   --resolution=512   --train_batch_size=1   --gradient_accumulation_steps=2 --gradient_checkpointing   --learning_rate=1e-6   --lr_scheduler="constant"   --lr_warmup_steps=0   --num_class_images=10   --max_train_steps=1500   --checkpointing_steps=500   --train_text_encoder   --use_8bit_adam  
+	
+This should train a model for 5000 iterations. Please keep these hyperparameters if you wish to replicate our results.  
+
+
+### Text To Image with Diffusers
+In the ´script' folder, we include a file for generating UV maps from a text prompt and a pre-trained model. You can check its usage as:
+
+	python text2image.py -h
+
+For example, if you want to generate the UV map of a football player with 75 inference steps, and a guidance scale of 3, and save it in "football.png":
+
+	python text2image.py --guidance_scale 3 --inference_steps 75 --prompt "a sks texture map of a football player" --output_file "football.png"
+
+
+
+### Automatic1111 integration
+
+To use [[Automatic1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui)] with your pre-trained model, please follow their installation instructions. 
+
+Then, you will need to convert your model into their format, as follows:
+
+	python scripts/convert_diffusers_to_original_stable_diffusion.py --model_path PATH_TO_YOUR_TRAINED_MODEL  --checkpoint_path OUTPUT_PATH/simplitex.ckpt
+	
+Finally, move `simplitex.ckpt` into ´models/Stable-diffusion/´ in your Automatic1111 installation folder, and select this model on ´Checkpoints´ in their web UI. 
+
+For best results, please use a guidance scale of 2, 50-150 inference steps. An example prompt that generates a UV map of an austronaut is "a sks texturemap of an astronaut".
+
+
+
+
+
+
+
+
+
 
 ## Citation
 
