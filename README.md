@@ -64,7 +64,9 @@ For example, if you want to generate the UV map of a football player with 75 inf
 
 	python text2image.py --guidance_scale 2 --inference_steps 75 --prompt "a sks texturemap of bill gates" --output_file "bill-gates.png"
 
+This will generate a different image every time, since the seed changes. Below is an example of a texture generated:
 
+<img src="img/00031-1415968941-a sks texture.png" alt="Automatic1111 view" width="70%"/>
 
 ### Automatic1111 integration
 
