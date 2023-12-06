@@ -82,6 +82,7 @@ Finally, move `SMPLitex-v1.0.ckpt` into `models/Stable-diffusion/` in your Autom
 (This example was generated with the settings: Steps: 20, Sampler: Euler a, CFG scale: 2.5, Seed: 1415968941, Size: 512x512, Model hash: a942f240)
 
 
+
 For best results, please use a guidance scale of 2, 50-150 inference steps. An example prompt that generates a UV map of is "a sks texturemap of bill gates".
 
 
