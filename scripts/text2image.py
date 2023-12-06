@@ -17,7 +17,7 @@ if __name__ == "__main__":
     assert args.guidance_scale >= 0., "Invalid guidance scale value"
     assert args.inference_steps > 0, "Invalid inference steps number"
 
-    pipe = StableDiffusionPipeline.from_pretrained(args.model_path)
+    pipe = StableDiffusionPipeline.from_pretrained(args.model_path, safety_checker = None)
     pipe.to("cuda")
 
     image = pipe(args.prompt, guidance_scale=args.guidance_scale, num_inference_steps=args.inference_steps).images[0]
