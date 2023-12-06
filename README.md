@@ -60,7 +60,7 @@ In the ´script' folder, we include a file for generating UV maps from a text pr
 
 For example, if you want to generate the UV map of a football player with 75 inference steps, and a guidance scale of 3, and save it in "football.png":
 
-	python text2image.py --guidance_scale 3 --inference_steps 75 --prompt "a sks texture map of a football player" --output_file "football.png"
+	python text2image.py --guidance_scale 3 --inference_steps 75 --prompt "a sks texturemap of bill gates" --output_file "bill-gates.png"
 
 
 
