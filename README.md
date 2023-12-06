@@ -63,7 +63,7 @@ This should train a model for 1500 iterations. Please keep these hyperparameters
 
 ## Text to Texture with Diffusers
 
-In the ´script´ folder, we include a file for generating texture maps from a text prompt and a pre-trained model. You can check its usage as:
+In the `script` folder, we include a file for generating texture maps from a text prompt and a pre-trained model. You can check its usage as:
 
 	python text2image.py -h
 
