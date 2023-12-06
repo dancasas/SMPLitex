@@ -15,10 +15,10 @@ Dan Casas and Marc Comino-Trinidad
 
 ## Table of Contents
 
-[SMPLitex dataset](#SMPLitex-dataset)
-<ul>
-	<li>[SMPLitex dataset](#SMPLitex-dataset)</li>
-</ul>
+* [SMPLitex dataset](#SMPLitex-dataset)
+* [Results on DeepFashion-MultiModal](#Results-on-DeepFashion-MultiModal)
+* [Install instructions][#Install-instructions]
+    * [Download pretrained model](#Download-our-pretrained-model)      
 
 ## SMPLitex dataset
 SMPLitex enables the synthesis of textures for SMPL model. For those interested in just accessing to a large number of textures, we have created a curated dataset of SMPL textures generated with SMPLitex. You can access to the dataset here: [Dataset](./textures)
