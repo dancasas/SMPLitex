@@ -1,15 +1,33 @@
 # SMPLitex: A Generative Model and Dataset for 3D Human Texture Estimation from Single Image
+<p align="center" width="100%">
+	<img src="img/casas_BMVC23.png" alt="Teaser image" width="80%"/>
+</p>
 
-<img src="img/casas_BMVC23.png" alt="Teaser image" width="80%"/>
+British Machine Vision Conference (BMVC), 2023
 
-[[Project website](https://dancasas.github.io/projects/SMPLitex/index.html)]
+Dan Casas and Marc Comino-Trinidad
+
+[Project website](https://dancasas.github.io/projects/SMPLitex/index.html)
 
 ## Abstract
 
 > We propose SMPLitex, a method for estimating and manipulating the complete 3D appearance of humans captured from a single image. SMPLitex builds upon the recently proposed generative models for 2D images, and extends their use to the 3D domain through pixel-to-surface correspondences computed on the input image. To this end, we first train a generative model for complete 3D human appearance, and then fit it into the input image by conditioning the generative model to the visible parts of subject. Furthermore, we propose a new dataset of high-quality human textures built by sampling SMPLitex conditioned on subject descriptions and images. We quantitatively and qualitatively evaluate our method in 3 publicly available datasets, demonstrating that SMPLitex significantly outperforms existing methods for human texture estimation while allowing for a wider variety of tasks such as editing, synthesis, and manipulation.
 
+## Table of Contents
+
+* [SMPLitex dataset](#SMPLitex-dataset)
+* [Results on DeepFashion-MultiModal](#Results-on-DeepFashion-MultiModal)
+* [Install instructions](#Install-instructions)
+    * [Download pretrained model](#Download-our-pretrained-model)
+    * [Train your own model](#Train-your-own-model)    
+* [Text to Texture with Diffusers](#Text-to-Texture-with-Diffusers)
+* [Text to Texture with Automatic1111](#Text-to-Texture-with-Automatic1111)
+* [Texture Estimation from Single Image](#Texture-Estimation-from-Single-Image)
+  
 ## SMPLitex dataset
-[Dataset](./textures)
+SMPLitex enables the synthesis of textures for SMPL model. For those interested in just accessing to a large number of textures, we have created a curated dataset of SMPL textures generated with SMPLitex. You can access to the dataset here: [Dataset](./textures)
+
+Please note that is dataset is under construction and growing. Feel free to send your best samples into SMPLitex dataset via Pull Request!
 
 ## Results on DeepFashion-MultiModal
 [Results](./results/DeepFashion)
@@ -54,9 +72,9 @@ And train your model as:
 	
 This should train a model for 1500 iterations. Please keep these hyperparameters if you wish to replicate our results.  
 
+## Text to Texture with Diffusers
 
-### Text To Image with Diffusers
-In the ´script´ folder, we include a file for generating texture maps from a text prompt and a pre-trained model. You can check its usage as:
+In the `scripts` folder, we include a Python script for generating texture maps from a text prompt and a pre-trained model. You can check its usage as:
 
 	python text2image.py -h
 
@@ -64,9 +82,13 @@ For example, if you want to generate the UV map of a football player with 75 inf
 
 	python text2image.py --guidance_scale 2 --inference_steps 75 --prompt "a sks texturemap of bill gates" --output_file "bill-gates.png"
 
+This will generate a different image every time, since the seed changes. Below is an example of a texture generated:
 
+<p align="center" width="100%">
+<img src="img/00031-1415968941-a sks texture.png" alt="Automatic1111 view" width="50%"/>
+</p>
 
-### Automatic1111 integration
+## Text to Texture with Automatic1111
 
 To use [Automatic1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) with a pre-trained model, please follow their installation instructions. 
 
@@ -78,14 +100,18 @@ Alternatively, you can download our pretrained version of SMPLitex directly in t
 
 Finally, move `SMPLitex-v1.0.ckpt` into `models/Stable-diffusion/` in your Automatic1111 installation folder, and select this model on Checkpoints in their web UI.
 
+<p align="center" width="100%">
 <img src="img/A1111-screenshot.jpg" alt="Automatic1111 view" width="70%"/>
+	
 (This example was generated with the settings: Steps: 20, Sampler: Euler a, CFG scale: 2.5, Seed: 1415968941, Size: 512x512, Model hash: a942f240)
-
+</p>
 
 
 For best results, please use a guidance scale of 2, 50-150 inference steps. An example prompt that generates a UV map of is "a sks texturemap of bill gates".
 
+## Texture Estimation from Single Image
 
+TODO
 
 
 
