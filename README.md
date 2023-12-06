@@ -68,8 +68,9 @@ For example, if you want to generate the UV map of a football player with 75 inf
 
 This will generate a different image every time, since the seed changes. Below is an example of a texture generated:
 
+<p align="center" width="100%">
 <img src="img/00031-1415968941-a sks texture.png" alt="Automatic1111 view" width="50%"/>
-
+</p>
 ### Automatic1111 integration
 
 To use [Automatic1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) with a pre-trained model, please follow their installation instructions. 
@@ -82,9 +83,10 @@ Alternatively, you can download our pretrained version of SMPLitex directly in t
 
 Finally, move `SMPLitex-v1.0.ckpt` into `models/Stable-diffusion/` in your Automatic1111 installation folder, and select this model on Checkpoints in their web UI.
 
+<p align="center" width="100%">
 <img src="img/A1111-screenshot.jpg" alt="Automatic1111 view" width="70%"/>
 (This example was generated with the settings: Steps: 20, Sampler: Euler a, CFG scale: 2.5, Seed: 1415968941, Size: 512x512, Model hash: a942f240)
-
+</p>
 
 
 For best results, please use a guidance scale of 2, 50-150 inference steps. An example prompt that generates a UV map of is "a sks texturemap of bill gates".
