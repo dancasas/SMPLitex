@@ -15,13 +15,15 @@
 [Results](./results/DeepFashion)
 
 ## Install instructions
-Please use a UNIX environment. Make sure you have a high-end NVidia GPU. We recommend a RTX 4090. 
+Please use a UNIX environment. Make sure you have a high-end NVidia GPU. We recommend a RTX 3090 or 4090. 
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Download our model
+### Download our pretrained model
+
+Download our pretrained diffuser model from [SMPLitex-v1.0.zip](https://drive.google.com/file/d/1vLLxknRjvQU1oqYha749EYpLPoK1Jn7U/view?usp=sharing) and unzip it "./simplitex-trained-model"
 
 ### Train your own model
 
@@ -33,7 +35,7 @@ Place your own UV maps in a folder. We used 512x512 pixels .jpg files for our tr
 
 	export INSTANCE_DIR="./data_train"
 	
-Create an temporary folder onto which to save initial images:
+Create a temporary folder onto which to save initial images:
 
 	export CLASS_DIR="class_dir"
 
@@ -54,13 +56,13 @@ This should train a model for 1500 iterations. Please keep these hyperparameters
 
 
 ### Text To Image with Diffusers
-In the ´script' folder, we include a file for generating UV maps from a text prompt and a pre-trained model. You can check its usage as:
+In the ´script´ folder, we include a file for generating texture maps from a text prompt and a pre-trained model. You can check its usage as:
 
 	python text2image.py -h
 
-For example, if you want to generate the UV map of a football player with 75 inference steps, and a guidance scale of 3, and save it in "football.png":
+For example, if you want to generate the UV map of a football player with 75 inference steps, and a guidance scale of 2, and save it in "bill-gates.png":
 
-	python text2image.py --guidance_scale 3 --inference_steps 75 --prompt "a sks texturemap of bill gates" --output_file "bill-gates.png"
+	python text2image.py --guidance_scale 2 --inference_steps 75 --prompt "a sks texturemap of bill gates" --output_file "bill-gates.png"
 
 
 
