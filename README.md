@@ -71,6 +71,7 @@ This will generate a different image every time, since the seed changes. Below i
 <p align="center" width="100%">
 <img src="img/00031-1415968941-a sks texture.png" alt="Automatic1111 view" width="50%"/>
 </p>
+
 ### Automatic1111 integration
 
 To use [Automatic1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) with a pre-trained model, please follow their installation instructions. 
@@ -85,6 +86,7 @@ Finally, move `SMPLitex-v1.0.ckpt` into `models/Stable-diffusion/` in your Autom
 
 <p align="center" width="100%">
 <img src="img/A1111-screenshot.jpg" alt="Automatic1111 view" width="70%"/>
+	
 (This example was generated with the settings: Steps: 20, Sampler: Euler a, CFG scale: 2.5, Seed: 1415968941, Size: 512x512, Model hash: a942f240)
 </p>
 
