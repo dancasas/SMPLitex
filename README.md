@@ -78,9 +78,9 @@ Alternatively, you can download our pretrained version of SMPLitex directly in t
 
 Finally, move `SMPLitex-v1.0.ckpt` into `models/Stable-diffusion/` in your Automatic1111 installation folder, and select this model on Checkpoints in their web UI.
 
-<img src="img/A1111-screenshot.jpg" alt="Automatic1111 view" width="50%"/>
+<img src="img/A1111-screenshot.jpg" alt="Automatic1111 view" width="70%"/>
 
-For best results, please use a guidance scale of 2, 50-150 inference steps. An example prompt that generates a UV map of an austronaut is "a sks texturemap of an astronaut".
+For best results, please use a guidance scale of 2, 50-150 inference steps. An example prompt that generates a UV map of is "a sks texturemap of bill gates".
 
 
 
