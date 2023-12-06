@@ -87,10 +87,6 @@ For best results, please use a guidance scale of 2, 50-150 inference steps. An e
 
 
 
-
-
-
-
 ## Citation
 
 ```
