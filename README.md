@@ -41,7 +41,7 @@ pip install -r requirements.txt
 
 ### Download our pretrained model
 
-Download our pretrained diffuser model from [SMPLitex-v1.0.zip](https://drive.google.com/file/d/1vLLxknRjvQU1oqYha749EYpLPoK1Jn7U/view?usp=sharing) and unzip it "./simplitex-trained-model"
+Download our pretrained diffuser model from [SMPLitex-v1.0.zip](https://drive.google.com/file/d/1vLLxknRjvQU1oqYha749EYpLPoK1Jn7U/view?usp=sharing) and unzip it `./simplitex-trained-model`
 
 ### Train your own model
 
