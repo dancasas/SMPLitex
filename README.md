@@ -57,7 +57,7 @@ And train your model as:
 This should train a model for 1500 iterations. Please keep these hyperparameters if you wish to replicate our results.  
 
 
-### Text To Image with Diffusers
+## Text To Texture with Diffusers
 In the ´script´ folder, we include a file for generating texture maps from a text prompt and a pre-trained model. You can check its usage as:
 
 	python text2image.py -h
@@ -72,7 +72,7 @@ This will generate a different image every time, since the seed changes. Below i
 <img src="img/00031-1415968941-a sks texture.png" alt="Automatic1111 view" width="50%"/>
 </p>
 
-### Automatic1111 integration
+## Text to Texture with Automatic1111
 
 To use [Automatic1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) with a pre-trained model, please follow their installation instructions. 
 
@@ -93,7 +93,8 @@ Finally, move `SMPLitex-v1.0.ckpt` into `models/Stable-diffusion/` in your Autom
 
 For best results, please use a guidance scale of 2, 50-150 inference steps. An example prompt that generates a UV map of is "a sks texturemap of bill gates".
 
-
+## Texture Estimation from Single Image
+TODO
 
 
 
