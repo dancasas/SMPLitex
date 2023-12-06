@@ -15,6 +15,7 @@ Dan Casas and Marc Comino-Trinidad
 
 ## Table of Contents
 
+[SMPLitex dataset](#SMPLitex-dataset)
 <ul>
 	<li>[SMPLitex dataset](#SMPLitex-dataset)</li>
 </ul>
