@@ -68,13 +68,17 @@ For example, if you want to generate the UV map of a football player with 75 inf
 
 ### Automatic1111 integration
 
-To use [[Automatic1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui)] with your pre-trained model, please follow their installation instructions. 
+To use [Automatic1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) with a pre-trained model, please follow their installation instructions. 
 
-Then, you will need to convert your model into their format, as follows:
+If you have trained your own model, you will need to convert it into their format, as follows:
 
-	python scripts/convert_diffusers_to_original_stable_diffusion.py --model_path PATH_TO_YOUR_TRAINED_MODEL  --checkpoint_path OUTPUT_PATH/simplitex.ckpt
-	
-Finally, move `simplitex.ckpt` into ´models/Stable-diffusion/´ in your Automatic1111 installation folder, and select this model on ´Checkpoints´ in their web UI. 
+	python scripts/convert_diffusers_to_original_stable_diffusion.py --model_path PATH_TO_YOUR_TRAINED_MODEL  --checkpoint_path OUTPUT_PATH/SMPLitex.ckpt
+
+Alternatively, you can download our pretrained version of SMPLitex directly in the `.ckpt` format from here: [SMPLitex-v1.0.ckpt](https://drive.google.com/file/d/1MMqosTOa-lvl5EOjK2aqAhPBL8p7UzGp/view?usp=sharing)
+
+Finally, move `SMPLitex-v1.0.ckpt` into ´models/Stable-diffusion/´ in your Automatic1111 installation folder, and select this model on ´Checkpoints´ in their web UI.
+
+
 
 For best results, please use a guidance scale of 2, 50-150 inference steps. An example prompt that generates a UV map of an austronaut is "a sks texturemap of an astronaut".
 
