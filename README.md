@@ -3,6 +3,8 @@
 	<img src="img/casas_BMVC23.png" alt="Teaser image" width="80%"/>
 </p>
 
+British Machine Vision Conference (BMVC), 2023
+Dan Casas and Marc Comino-Trinidad
 [Project website](https://dancasas.github.io/projects/SMPLitex/index.html)
 
 ## Abstract
