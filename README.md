@@ -76,9 +76,9 @@ If you have trained your own model, you will need to convert it into their forma
 
 Alternatively, you can download our pretrained version of SMPLitex directly in the `.ckpt` format from here: [SMPLitex-v1.0.ckpt](https://drive.google.com/file/d/1MMqosTOa-lvl5EOjK2aqAhPBL8p7UzGp/view?usp=sharing)
 
-Finally, move `SMPLitex-v1.0.ckpt` into ´models/Stable-diffusion/´ in your Automatic1111 installation folder, and select this model on ´Checkpoints´ in their web UI.
+Finally, move `SMPLitex-v1.0.ckpt` into `models/Stable-diffusion/` in your Automatic1111 installation folder, and select this model on Checkpoints in their web UI.
 
-
+<img src="img/A1111-screenshot.jpg" alt="Automatic1111 view" width="50%"/>
 
 For best results, please use a guidance scale of 2, 50-150 inference steps. An example prompt that generates a UV map of an austronaut is "a sks texturemap of an astronaut".
 
