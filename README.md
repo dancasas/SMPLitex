@@ -25,7 +25,7 @@ Dan Casas and Marc Comino-Trinidad
 * [Texture Estimation from Single Image](#Texture-Estimation-from-Single-Image)
   
 ## SMPLitex dataset
-SMPLitex enables the synthesis of textures for SMPL model. For those interested in just accessing to a large number of textures, we have created a curated dataset of SMPL textures generated with SMPLitex. You can access to the dataset here: [Dataset](./SMPLitex-dataset/textures)
+SMPLitex enables the synthesis of textures for SMPL model. For those interested in just accessing to a large number of textures, we have created a curated dataset of SMPL textures generated with SMPLitex. You can access to the dataset here: [Dataset](./SMPLitex-dataset)
 
 Please note that is dataset is under construction and growing. Feel free to send your best samples into SMPLitex dataset via Pull Request!
 
