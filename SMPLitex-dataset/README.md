@@ -1,3 +1,4 @@
+All SMPLitex textures are available in the (textures)[./textures] folder. See below a quick preview of all of them.
 <table>
   <tr>
     <td colspan="2" align="center">SMPLitex-texture-00000</td>
