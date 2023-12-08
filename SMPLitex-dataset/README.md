@@ -1,6 +1,6 @@
 <table>
   <tr>
-    <td>SMPLitex-texture-00000</td>
+    <td colspan="2">SMPLitex-texture-00000</td>
   </tr>
   <tr>
     <td> <img src="textures/SMPLitex-texture-00000.png"  alt="1" width = 250px></td>
