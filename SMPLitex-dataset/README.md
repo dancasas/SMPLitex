@@ -1,4 +1,9 @@
+
+### SMPLitex Dataset
+
 All SMPLitex textures are available in the [textures](./textures) folder. See below a quick preview of all of them.
+
+### Preview
 
 <table>
   <tr>
