@@ -1,10 +1,9 @@
-import torch
-import torch.nn as nn
-import numpy as np
-from scipy.io import loadmat
-import matplotlib.pyplot as plt
-from PIL import Image
 import os
+
+import numpy as np
+import torch
+from PIL import Image
+from scipy.io import loadmat
 
 # from configs import paths
 uv_path = "./densepose_uv_data/UV_Processed.mat"

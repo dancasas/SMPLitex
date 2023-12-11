@@ -1,14 +1,13 @@
-from UVTextureConverter import UVConverter
-from UVTextureConverter import Normal2Atlas
-from UVTextureConverter import Atlas2Normal
-from PIL import Image
-from PIL import ImageChops
-import numpy as np
-from matplotlib import pyplot as plt
-import matplotlib.image as mpimg
 import os
 import re
+
+import matplotlib.image as mpimg
+import numpy as np
 import skimage
+from PIL import Image
+from UVTextureConverter import Atlas2Normal
+from UVTextureConverter import UVConverter
+from matplotlib import pyplot as plt
 
 
 def apply_mask_to_iuv_images(dataset_root_path):
