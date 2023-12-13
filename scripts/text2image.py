@@ -12,10 +12,10 @@ if __name__ == "__main__":
         help="Path to the model to use.",
     )
     parser.add_argument(
-        "--guidance_scale", type=float, default=2.5, help="Value of guidance step"
+        "--guidance_scale", type=float, default=2, help="Value of guidance step"
     )
     parser.add_argument(
-        "--inference_steps", type=int, default=100, help="Numver of inference steps"
+        "--inference_steps", type=int, default=200, help="Number of inference steps"
     )
     parser.add_argument(
         "--prompt",

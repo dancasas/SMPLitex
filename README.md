@@ -111,7 +111,17 @@ For best results, please use a guidance scale of 2, 50-150 inference steps. An e
 
 ## Texture Estimation from Single Image
 
-TODO
+To use our model for estimating a texture, please follow the next steps:
+
+Change your working directory to the scripts folder:
+
+	cd scripts
+
+You will need to have a pre-trained model, an image containing the incomplete UV texture, and the mask. Use the following script:
+
+	python inpaint.py --guidance_scale 2.5 --inference_steps 250 --model_path "simplitex-trained-model" --output_folder "output"
+	
+You can use `--render True` to launch front and back renders of the generated texture using a t-pose SMPL avatar. You may deactivate the post-inpainting refinement using `--refine False`, but results will be hindered. You may also change the prompt or the guidance scale. For more information please use the `--h` option. 
 
 
 

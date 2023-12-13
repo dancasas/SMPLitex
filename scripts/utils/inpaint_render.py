@@ -29,8 +29,6 @@ step 2.
 
 """
 import webuiapi
-from PIL import Image
-import PIL
 
 
 class StableDiffusionAPI:

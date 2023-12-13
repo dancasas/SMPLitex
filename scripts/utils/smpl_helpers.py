@@ -1,8 +1,14 @@
+import os
+import sys
+
 import imageio
 import numpy as np
 import torch
 
-from pytorch3d_renderer import render_mesh_textured
+file_dir = os.path.dirname(__file__)
+sys.path.append(file_dir)
+
+from renderer.pytorch3d_renderer import render_mesh_textured
 
 
 def render_amass_motion(
