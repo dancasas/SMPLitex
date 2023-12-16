@@ -1,24 +1,6 @@
 
 ### SMPLitex Dataset
 
-All SMPLitex textures are available in the [textures](./textures) folder. See below a quick preview of all of them.
+All SMPLitex textures are available in the [textures](./textures) folder. Check out <a href="https://dancasas.github.io/projects/SMPLitex/SMPLitex-dataset.html">this website</a> to browse the SMPLitex dataset.
 
-### Preview
 
-<table>
-  <tr>
-    <td colspan="2" align="center">SMPLitex-texture-00000</td>
-  </tr>
-  <tr>
-    <td> <img src="textures/SMPLitex-texture-00000.png"  alt="1" width = 250px></td>
-    <td><img src="360-gifs/SMPLitex-texture-00000.gif" alt="2" width = 250px></td>
-   </tr>
-  
-  <tr>
-    <td colspan="2" align="center">SMPLitex-texture-00001</td>
-  </tr>
-  <tr>
-    <td> <img src="textures/SMPLitex-texture-00001.png"  alt="1" width = 250px></td>
-    <td><img src="360-gifs/SMPLitex-texture-00001.gif" alt="2" width = 250px></td>
-   </tr>
-</table>
