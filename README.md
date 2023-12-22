@@ -28,7 +28,7 @@ Dan Casas and Marc Comino-Trinidad
 SMPLitex enables the synthesis of textures for SMPL model. For those interested in just accessing to a large number of textures, we have created a curated dataset of SMPL textures generated with SMPLitex. You can access to the dataset here: [Dataset](http://dancasas.github.io/projects/SMPLitex/SMPLitex-dataset.html)
 
 <p align="center" width="100%">
-<a href="http://dancasas.github.io/projects/SMPLitex/SMPLitex-dataset.html"><img src="img/SMPLitex-dataset-preview.jpg" alt="SMPLitex Dataset preview" width="80%"/></a>
+<a href="http://dancasas.github.io/projects/SMPLitex/SMPLitex-dataset.html"><img src="img/SMPLitex-dataset-preview.jpg" alt="SMPLitex Dataset preview" width="100%"/></a>
 </p>
 
 
