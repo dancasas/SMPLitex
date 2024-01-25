@@ -22,7 +22,7 @@ Dan Casas and Marc Comino-Trinidad
     * [Train your own model](#Train-your-own-model)    
 * [Text to Texture with Diffusers](#Text-to-Texture-with-Diffusers)
 * [Text to Texture with Automatic1111](#Text-to-Texture-with-Automatic1111)
-* [Texture Estimation from Single Image](#Texture-Estimation-from-Single-Image)
+* [Texture Estimation from Single Image](#SMPL-Texture-Estimation-from-Single-Image)
   
 ## SMPLitex dataset
 SMPLitex enables the synthesis of textures for SMPL model. For those interested in just accessing to a large number of textures, we have created a curated dataset of SMPL textures generated with SMPLitex. You can access to the dataset here: [Dataset](http://dancasas.github.io/projects/SMPLitex/SMPLitex-dataset.html)
