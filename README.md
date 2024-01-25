@@ -112,15 +112,29 @@ Finally, move `SMPLitex-v1.0.ckpt` into `models/Stable-diffusion/` in your Autom
 
 For best results, please use a guidance scale of 2, 50-150 inference steps. An example prompt that generates a UV map of is "a sks texturemap of bill gates".
 
-## Texture Estimation from Single Image
+## SMPL Texture Estimation from Single Image
 
-To use our model for estimating a texture, please follow the next steps:
+To generate the SMPL texture from photo, first you need to run DensePose to estimate pixel-to-surface correspondences of the subject. Install [Detectron2](https://github.com/facebookresearch/detectron2) and run the following script. This will generate, for each image in the `./dummy_data/images` directory, the corresponding DensePose image and save it under `./dummy_data/images_densepose`:
 
-Change your working directory to the scripts folder:
+    cd scripts
+    python image_to_densepose.py --detectron2 /media/dan/HDD/dev/detectron2 --input_folder ./dummy_data/images
 
-	cd scripts
+Now you will need to compute the silhouette of the subject in the input image. We recommend using [Semantic Guided Human Matting (ACCV 2022)](https://github.com/cxgincsu/SemanticGuidedHumanMatting). Download their [code](https://github.com/cxgincsu/SemanticGuidedHumanMatting), and [weights](https://drive.google.com/drive/folders/15mGzPJQFEchaZHt9vgbmyOy46XxWtEOZ) and run the follwing script. This will generate, for each image in the `./dummy_data/images` directory, the corresponding image mask, and save it under `./dummy_data/images-seg`
 
-You will need to have a pre-trained model, an image containing the incomplete UV texture, and the mask. Use the following script:
+	python SemanticGuidedHumanMatting/test_image.py --images-dir ./dummy_data/images --result-dir ./dummy_data/images-seg --pretrained-weight pretrained/SGHM-ResNet50.pth
+
+Finally, you can creat the partial texturemaps running the following script. Texturemaps will be saved in `./dummy_data/uv-textures`. Additionally, it will generate a debug visualization in `./dummy_data/debug` and a UV mask of the visible pixels (required for inpaiting later) in `./dummy_data/uv-textures-masks`.
+
+	python compute_partial_texturemap.py --input_folder ./dummy_data
+
+
+### Inpaint with Automatic1111 (best results)
+
+TODO
+
+### Inpaint with Diffusers (experimental)
+
+The results of the paper were generated using our Automatic1111 pipeline. Nonetheless, we have exported the model to Diffusers, which also implements an inpaiting functionality. You can test it following this instructions but, please, notice that this will generate results different than what is reported in the paper. You will need to have a SMPLitex pre-trained model, an image containing the incomplete UV texture, and the mask. Use the following script:
 
 	python inpaint.py --guidance_scale 2.5 --inference_steps 250 --model_path "simplitex-trained-model" --output_folder "output"
 	
