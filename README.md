@@ -114,16 +114,16 @@ For best results, please use a guidance scale of 2, 50-150 inference steps. An e
 
 ## SMPL Texture Estimation from Single Image
 
-To generate the SMPL texture from photo, first you need to run DensePose to estimate pixel-to-surface correspondences of the subject. Install [Detectron2](https://github.com/facebookresearch/detectron2) and run the following script. This will generate, for each image in the `./dummy_data/images` directory, the corresponding DensePose image and save it under `./dummy_data/images_densepose`:
+To generate the SMPL texture from photo, first you need to run DensePose to estimate pixel-to-surface correspondences of the subject. Download [Detectron2](https://github.com/facebookresearch/detectron2) and run the following script. This will generate, for each image in the `./dummy_data/images` directory, the corresponding DensePose image and save it under `./dummy_data/images_densepose`:
 
     cd scripts
-    python image_to_densepose.py --detectron2 /media/dan/HDD/dev/detectron2 --input_folder ./dummy_data/images
+    python image_to_densepose.py --detectron2 DETECTRON_PATH --input_folder ./dummy_data/images
 
 Now you will need to compute the silhouette of the subject in the input image. We recommend using [Semantic Guided Human Matting (ACCV 2022)](https://github.com/cxgincsu/SemanticGuidedHumanMatting). Download their [code](https://github.com/cxgincsu/SemanticGuidedHumanMatting), and [weights](https://drive.google.com/drive/folders/15mGzPJQFEchaZHt9vgbmyOy46XxWtEOZ) and run the follwing script. This will generate, for each image in the `./dummy_data/images` directory, the corresponding image mask, and save it under `./dummy_data/images-seg`
 
 	python SemanticGuidedHumanMatting/test_image.py --images-dir ./dummy_data/images --result-dir ./dummy_data/images-seg --pretrained-weight pretrained/SGHM-ResNet50.pth
 
-Finally, you can creat the partial texturemaps running the following script. Texturemaps will be saved in `./dummy_data/uv-textures`. Additionally, it will generate a debug visualization in `./dummy_data/debug` and a UV mask of the visible pixels (required for inpaiting later) in `./dummy_data/uv-textures-masks`.
+Finally, you can create the partial texturemaps running the following script. Texturemaps will be saved in `./dummy_data/uv-textures`. Additionally, it will generate a debug visualization in `./dummy_data/debug` and a UV mask of the visible pixels (required for inpaiting later) in `./dummy_data/uv-textures-masks`.
 
 	python compute_partial_texturemap.py --input_folder ./dummy_data
 
