@@ -114,6 +114,8 @@ For best results, please use a guidance scale of 2, 50-150 inference steps. An e
 
 ## SMPL Texture Estimation from Single Image
 
+### Generate partial texturemap
+
 To generate the SMPL texture from photo, first you need to run DensePose to estimate pixel-to-surface correspondences of the subject. Download [Detectron2](https://github.com/facebookresearch/detectron2) and run the following script. This will generate, for each image in the `./dummy_data/images` directory, the corresponding DensePose image and save it under `./dummy_data/images_densepose`:
 
     cd scripts
@@ -130,7 +132,21 @@ Finally, you can create the partial texturemaps running the following script. Te
 
 ### Inpaint with Automatic1111 (best results)
 
-TODO
+Make sure you have an Automatic1111 installation up and running. You will also need this [API client for AUTOMATIC1111/stable-diffusion-webui](https://github.com/mix1009/sdwebuiapi)
+
+    $ pip install webuiapi
+
+Launch Automatic1111 on your terminal with API flag.
+
+    ~/stable-diffusion-webui$ ./webui.sh --disable-safe-unpickle --api
+
+Then, make sure you load the SMPLitex model in Automatic1111 web interface, via http://127.0.0.1:7860
+
+Finally, run the following script. Please note that the folder `./uv-textures` and `./uv-texturesmask` contains the partial textures and the masks, respectively, [as explained above](#Generate-partial-texturemap).
+
+    python inpaint_with_A1111.py --partial_textures ./uv-textures --masks ./uv-textures-masks --inpainted_textures `./uv-textures-inpainted`
+
+Inpainted textures will be in `./uv-textures-inpainted`
 
 ### Inpaint with Diffusers (experimental)
 
