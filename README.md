@@ -127,14 +127,25 @@ To generate the SMPL texture from photo, first you need to run DensePose to esti
     cd scripts
     python image_to_densepose.py --detectron2 DETECTRON_PATH --input_folder ./dummy_data/images
 
+<p align="center" width="100%">
+<img src="img/MEN-Jackets_Vests-id_00003336-09_1_front.jpg" alt="Input" width="25%"/><img src="img/MEN-Jackets_Vests-id_00003336-09_1_front_densepose.png" alt="Dense Pose" width="25%"/>
+</p>
+
 Now you will need to compute the silhouette of the subject in the input image. We recommend using [Semantic Guided Human Matting (ACCV 2022)](https://github.com/cxgincsu/SemanticGuidedHumanMatting). Download their [code](https://github.com/cxgincsu/SemanticGuidedHumanMatting), and [weights](https://drive.google.com/drive/folders/15mGzPJQFEchaZHt9vgbmyOy46XxWtEOZ) and run the follwing script. This will generate, for each image in the `./dummy_data/images` directory, the corresponding image mask, and save it under `./dummy_data/images-seg`
 
 	python SemanticGuidedHumanMatting/test_image.py --images-dir ./dummy_data/images --result-dir ./dummy_data/images-seg --pretrained-weight pretrained/SGHM-ResNet50.pth
 
+<p align="center" width="100%">
+<img src="img/MEN-Jackets_Vests-id_00003336-09_1_front_sil.png" alt="Silhouette" width="25%"/>
+</p>
+
 Finally, you can create the partial texturemaps running the following script. Texturemaps will be saved in `./dummy_data/uv-textures`. Additionally, it will generate a debug visualization in `./dummy_data/debug` and a UV mask of the visible pixels (required for inpaiting later) in `./dummy_data/uv-textures-masks`.
 
 	python compute_partial_texturemap.py --input_folder ./dummy_data
-
+ 
+<p align="center" width="100%">
+<img src="img/MEN-Jackets_Vests-id_00003336-09_1_front_texture.png" alt="Partial texturemap" width="30%"/>
+</p>
 
 ### Inpaint with Automatic1111 (best results)
 
@@ -153,6 +164,11 @@ Finally, run the following script. Please note that the folder `./uv-textures` a
     python inpaint_with_A1111.py --partial_textures ./uv-textures --masks ./uv-textures-masks --inpainted_textures `./uv-textures-inpainted`
 
 Inpainted textures will be in `./uv-textures-inpainted`
+
+<p align="center" width="100%">
+<img src="img/MEN-Jackets_Vests-id_00003336-09_1_front_texture_inpaint-005_img2img-000_05142023-170509.png" alt="Inpaint result" width="30%"/><img src="img/MEN-Jackets_Vests-id_00003336-09_1_front_texture_inpaint-005_img2img-000_05142023-170509_debug.png" alt="Inpaint result" width="60%"/>
+</p>
+
 
 ### Inpaint with Diffusers (experimental)
 
