@@ -66,9 +66,9 @@ class RGB2DensePose:
 
         i       = data[0]['pred_densepose'][0].labels.cpu().numpy()
         uv      = data[0]['pred_densepose'][0].uv.cpu().numpy()
-        iuv     = np.stack((uv[1,:,:], uv[0,:,:], i))
+        iuv     = np.stack((uv[1,:,:], uv[0,:,:], 256 - i))
         iuv     = np.transpose(iuv, (1,2,0))
-        iuv_img = Image.fromarray(1 - np.uint8(iuv*255),"RGB")
+        iuv_img = Image.fromarray(np.uint8(iuv*255),"RGB")
 
         #iuv_img.show() #It shows only the croped person
 
@@ -78,7 +78,7 @@ class RGB2DensePose:
         x,y,w,h = [int(v) for v in box]
         bg      = np.zeros((img_h,img_w,3))
         bg[y:y+h,x:x+w,:] = iuv
-        bg_img  = Image.fromarray(1 - np.uint8(bg*255),"RGB")
+        bg_img  = Image.fromarray(np.uint8(bg*255),"RGB")
 
         bg_img.save(output_image)
 
