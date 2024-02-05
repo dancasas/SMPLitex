@@ -133,7 +133,7 @@ To generate the SMPL texture from photo, first you need to run DensePose to esti
 
 Now you will need to compute the silhouette of the subject in the input image. We recommend using [Semantic Guided Human Matting (ACCV 2022)](https://github.com/cxgincsu/SemanticGuidedHumanMatting). Download their [code](https://github.com/cxgincsu/SemanticGuidedHumanMatting), and [weights](https://drive.google.com/drive/folders/15mGzPJQFEchaZHt9vgbmyOy46XxWtEOZ) and run the follwing script. This will generate, for each image in the `./dummy_data/images` directory, the corresponding image mask, and save it under `./dummy_data/images-seg`
 
-	python SemanticGuidedHumanMatting/test_image.py --images-dir ./dummy_data/images --result-dir ./dummy_data/images-seg --pretrained-weight pretrained/SGHM-ResNet50.pth
+	python SemanticGuidedHumanMatting/test_image.py --images-dir ./dummy_data/images --result-dir ./dummy_data/images-seg --pretrained-weight SemanticGuidedHumanMatting/pretrained/SGHM-ResNet50.pth
 
 <p align="center" width="100%">
 <img src="img/MEN-Jackets_Vests-id_00003336-09_1_front_sil.png" alt="Silhouette" width="25%"/>
