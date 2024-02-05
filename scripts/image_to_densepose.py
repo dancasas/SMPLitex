@@ -90,7 +90,7 @@ parser.add_argument('--input_folder', type=str, help='Folder with images', requi
 args = parser.parse_args()
 
 DETECTRON_PATH = args.detectron2
-INPUT_IMAGE_PATH = args.input_folder
+INPUT_IMAGE_PATH = os.path.abspath(args.input_folder)
 
 # removes backslash in case it's the last character of the input path
 if INPUT_IMAGE_PATH.endswith('/'):
