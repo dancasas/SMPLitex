@@ -134,7 +134,11 @@ To generate the SMPL texture from photo, first you need to run DensePose to esti
 Now you will need to compute the silhouette of the subject in the input image. We recommend using [Semantic Guided Human Matting (ACCV 2022)](https://github.com/cxgincsu/SemanticGuidedHumanMatting). Download their [code](https://github.com/cxgincsu/SemanticGuidedHumanMatting), and [weights](https://drive.google.com/drive/folders/15mGzPJQFEchaZHt9vgbmyOy46XxWtEOZ) and run the follwing script. This will generate, for each image in the `./dummy_data/images` directory, the corresponding image mask, and save it under `./dummy_data/images-seg`
 
     git clone https://github.com/cxgincsu/SemanticGuidedHumanMatting.git
-	python SemanticGuidedHumanMatting/test_image.py --images-dir ./dummy_data/images  --result-dir ./dummy_data/images-seg --pretrained-weight SemanticGuidedHumanMatting/pretrained/SGHM-ResNet50.pth
+	# now put weights into SemanticGuidedHumanMatting/pretrained
+	python SemanticGuidedHumanMatting/test_image.py \
+		--images-dir ./dummy_data/images  \
+		--result-dir ./dummy_data/images-seg \
+		--pretrained-weight SemanticGuidedHumanMatting/pretrained/SGHM-ResNet50.pth
 
 <p align="center" width="100%">
 <img src="img/MEN-Jackets_Vests-id_00003336-09_1_front_sil.png" alt="Silhouette" width="25%"/>
@@ -162,13 +166,21 @@ Then, make sure you load the SMPLitex model in Automatic1111 web interface, via 
 
 Finally, run the following script. Please note that the folder `./uv-textures` and `./uv-texturesmask` contains the partial textures and the masks, respectively, [as explained above](#Generate-partial-texturemap).
 
-    python inpaint_with_A1111.py --partial_textures ./uv-textures --masks ./uv-textures-masks --inpainted_textures `./uv-textures-inpainted`
+    python inpaint_with_A1111.py --partial_textures ./dummy_data/uv-textures \ 
+								 --masks ./dummy_data/uv-textures-masks \
+								 --inpainted_textures ./dummy_data/uv-textures-inpainted
 
-Inpainted textures will be in `./uv-textures-inpainted`
+Inpainted textures will be in `./dummy_data/uv-textures-inpainted`
 
 <p align="center" width="100%">
 <img src="img/MEN-Jackets_Vests-id_00003336-09_1_front_texture_inpaint-005_img2img-000_05142023-170509.png" alt="Inpaint result" width="30%"/><img src="img/MEN-Jackets_Vests-id_00003336-09_1_front_texture_inpaint-005_img2img-000_05142023-170509_debug.png" alt="Inpaint result" width="60%"/>
 </p>
+
+If you want to render a 360 gif of the textures 
+
+    python render_results.py --textures ./dummy_data/uv-textures-inpainted/
+
+360 gifs will be added in `./uv-textures-inpainted`
 
 
 ### Inpaint with Diffusers (experimental)

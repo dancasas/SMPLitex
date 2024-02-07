@@ -3,7 +3,7 @@ import argparse
 import numpy as np
 from datetime import datetime
 from PIL import Image, ImageFilter, ImageOps
-from inpaint_render import StableDiffusionAPI
+from stablediffusion_wrapper import StableDiffusionAPI
 
 class InpaintWithA1111:
 
